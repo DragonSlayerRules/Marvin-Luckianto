@@ -33,7 +33,7 @@ export default function Home() {
           <div className="container mx-auto px-4 py-2 sm:py-4 sm:px-4">
             <div className="font-xl sm:text-3xl text-highlight/50 font-thin text-end">
               <span className="font-light">Paggani | </span>
-              It's a cool car
+              It{"'"}s a cool car
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="text-highlight absolute z-10 flex flex-col items-end justify-end  aspect-[2/1] w-full p-4 sm:p-8">
             <div className="font-xl sm:text-3xl mt-1 text-highlight/50 font-thin text-end">
               <span className="font-light">VW Beetle | </span>
-              It's also a cool car
+              It{"'"}s also a cool car
             </div>
           </div>
         </div>
