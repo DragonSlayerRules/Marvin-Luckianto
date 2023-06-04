@@ -6,10 +6,18 @@ import three from "../public/asset/3.png";
 import four from "../public/asset/4.png";
 import five from "../public/asset/5.png";
 import six from "../public/asset/6.png";
+import logo from "../public/asset/logo.png";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <mainp>
+      <Head>
+        <title>Marvin Luckianto</title>
+        <meta name="description" content="Marvin Car Collection" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href={logo.src} />
+      </Head>
       {/* Header */}
       <div className="font-light bg-black/50  flex justify-center z-50 sticky top-0">
         <div className="container mx-auto flex px-4 py-2 text-base sm:text-2xl justify-between text-highlight top-0">
