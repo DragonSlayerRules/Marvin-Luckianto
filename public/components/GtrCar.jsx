@@ -1,6 +1,6 @@
-import React, { Suspense, useRef } from "react";
+import React, { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, Line } from "@react-three/drei";
+import { OrbitControls, useGLTF, Line } from "@react-three/drei";
 
 import CanvasLoader from "../components/Loader";
 
@@ -27,7 +27,7 @@ const generateLines = (radius, segments) => {
 const GtrCar = () => {
   const gtr = useGLTF("/asset/zondabarchetta.gltf");
 
-  const carRef = useRef();
+  const carRef = React.useRef();
 
   useFrame(() => {
     if (carRef.current) {
@@ -100,36 +100,6 @@ const GtrCar = () => {
   );
 };
 
-// const WireframeBackground = () => {
-//   const radius = 10;
-//   const segments = 40;
-//   const angleIncrement = (2 * Math.PI) / segments;
-
-//   const lines = [];
-
-//   // Generate the spider web lines
-//   for (let i = 0; i < segments; i++) {
-//     const angle = i * angleIncrement;
-
-//     const x1 = Math.cos(angle) * radius;
-//     const y1 = Math.sin(angle) * radius;
-//     const x2 = Math.cos(angle + angleIncrement) * radius;
-//     const y2 = Math.sin(angle + angleIncrement) * radius;
-
-//     lines.push(
-//       <Line key={i} points={[x1, y1, 0, x2, y2, 0]} color={0x2d4059} />
-//     );
-//   }
-
-//   return (
-//     <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2.5, 0]}>
-//       <planeGeometry args={[50, 50]} />
-//       <meshBasicMaterial color={0x2d4059} wireframe />
-//       {lines}
-//     </mesh>
-//   );
-// };
-
 const WireframeBackground = React.memo(() => {
   const radius = 10;
   const segments = 40;
@@ -165,7 +135,6 @@ const GtrCanvas = () => {
         <GtrCar />
         <WireframeBackground />
       </Suspense>
-      <Preload all />
     </Canvas>
   );
 };
